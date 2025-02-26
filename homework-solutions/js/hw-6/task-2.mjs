@@ -15,16 +15,17 @@ const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 
 let resultUnique = [];
 let resultNull = null;
+let lowercompetitorPizzas = competitorPizzas.join().toLowerCase().split(',');
 
 for (const pizza of myPizzasT1) {
-  if (!competitorPizzas.includes(pizza)) {
+  if (!lowercompetitorPizzas.includes(pizza.toLowerCase())) {
     resultUnique.push(pizza);
   }
 }
 console.log(resultUnique ? resultUnique : resultNull);
 
 for (const pizzas of myPizzasT2) {
-  if (!competitorPizzas.includes(pizzas)) {
+  if (!lowercompetitorPizzas.includes(pizzas.toLowerCase())) {
     resultUnique.push(pizzas);
   }
 }
