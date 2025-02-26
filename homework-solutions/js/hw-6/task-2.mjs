@@ -8,12 +8,27 @@
   Воспользуйтесь наборами пицц, что приведены ниже.
 
   Пиццы:
-  const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
-  const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
-  const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
-*/
+  */
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
+const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 
-let resultUnique;
-let resultNull;
+let resultUnique = [];
+let resultNull = null;
+let lowercompetitorPizzas = competitorPizzas.join().toLowerCase().split(',');
+
+for (const pizza of myPizzasT1) {
+  if (!lowercompetitorPizzas.includes(pizza.toLowerCase())) {
+    resultUnique.push(pizza);
+  }
+}
+console.log(resultUnique ? resultUnique : resultNull);
+
+for (const pizzas of myPizzasT2) {
+  if (!lowercompetitorPizzas.includes(pizzas.toLowerCase())) {
+    resultUnique.push(pizzas);
+  }
+}
+console.log(!resultUnique ? resultUnique : resultNull);
 
 export { resultNull, resultUnique };
