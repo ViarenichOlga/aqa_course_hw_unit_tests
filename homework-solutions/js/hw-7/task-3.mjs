@@ -9,7 +9,13 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  const numberArray = String(number).split('');
+  let arraySum = 0;
+  for (number of numberArray) {
+    arraySum += Number(number);
+  }
+
+  return arraySum > 9 ? digitalRoot(arraySum) : arraySum;
 }
 
 export { digitalRoot };
